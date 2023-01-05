@@ -1,0 +1,65 @@
+<script>
+        //CLIENTE NAO LOGADO
+        console.log('chat nao logado');
+        var BOTMAKER_VAR = {
+            nome_cliente: '',
+            email_cliente: '',
+            operatorEmail: '',
+            email_atendente: '',
+        };
+
+        (function () {
+            let js = document.createElement('script');
+            js.type = 'text/javascript';
+            js.async = 1;
+            js.src = 'https://go.botmaker.com/rest/webchat/p/BNOX35WR0I/init.js';
+            //js.src = 'https://go.botmaker.com/rest/webchat/p/EXTZADSFV3/init.js';
+            document.body.appendChild(js);
+        })();
+    </script>
+    <?php } else if (!$isLogged && $_SERVER["REMOTE_ADDR"]!='192.168.0.68')  {
+	
+			if (isset($_GET["email_cliente"])) {?>
+
+				<script>
+					//CLIENTE NAO LOGADO
+					console.log('chat nao logado');
+					var BOTMAKER_VAR = {
+						nome_cliente: '<?=$_GET["email_cliente"];?>',
+						email_cliente: '<?=$_GET["email_cliente"];?>',
+						operatorEmail: '',
+						email_atendente: '',
+					};
+
+					(function () {
+						let js = document.createElement('script');
+						js.type = 'text/javascript';
+						js.async = 1;
+						js.src = 'https://go.botmaker.com/rest/webchat/p/BNOX35WR0I/init.js';
+						//js.src = 'https://go.botmaker.com/rest/webchat/p/EXTZADSFV3/init.js';
+						document.body.appendChild(js);
+					})();
+				</script>
+
+	<?php } else {?>
+			<script>
+				//CLIENTE NAO LOGADO
+				console.log('chat nao logado');
+				var BOTMAKER_VAR = {
+					nome_cliente: '',
+					email_cliente: '',
+					operatorEmail: '',
+					email_atendente: '',
+				};
+
+				(function () {
+					let js = document.createElement('script');
+					js.type = 'text/javascript';
+					js.async = 1;
+					js.src = 'https://go.botmaker.com/rest/webchat/p/BNOX35WR0I/init.js';
+					//js.src = 'https://go.botmaker.com/rest/webchat/p/EXTZADSFV3/init.js';
+					document.body.appendChild(js);
+				})();
+			</script>
+	<?php } ?>
+<?php }
